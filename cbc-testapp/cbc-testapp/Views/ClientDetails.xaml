@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cbc_testapp.Views.ClientDetails">
+    <ContentPage.Content>
+        <StackLayout Spacing="5"  BackgroundColor="#f5f8fa" Margin="3" Padding="3">
+            <Frame Margin="4,0,4,0" Padding="6" CornerRadius="10">
+                <Grid ColumnSpacing="10" RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="QR Id" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblQRCode" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="5" />
+                    <Label Text="Name" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblName" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="5" />
+                    <Label Text="Address" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblAddress" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"  Grid.ColumnSpan="5" />
+                    <Label Text="Client Id" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblClientId" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="5" />
+                    <Label Text="Text" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblText" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5" />
+                </Grid>
+            </Frame>
+            <Grid ColumnSpacing="10" RowSpacing="5" Margin="3" Padding="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnBack"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="OK" BorderRadius="10" BackgroundColor="#2a9d8f" Margin="4" TextColor="Black" FontFamily="Comic Sans MS"  FontAttributes="Bold"  Clicked="BtnBack_Clicked" />
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

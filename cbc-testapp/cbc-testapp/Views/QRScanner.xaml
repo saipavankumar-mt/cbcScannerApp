@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="cbc_testapp.Views.QRScanner">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome"/>
+            <Label x:Name="ClientName" Text="{Binding ClientName}"/>
+            <Grid>
+                
+                <ActivityIndicator x:Name="activityIndicator" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsBusy,Mode=OneWay}" IsRunning="{Binding IsBusy,Mode=OneWay}" VerticalOptions="CenterAndExpand" Color="#1B3147"/>
+                <zxing:ZXingScannerView x:Name="scannerView" IsVisible="{Binding IsNotBusy,Mode=OneWay}" HorizontalOptions="FillAndExpand" VerticalOptions = "FillAndExpand" AutomationId = "zxingScannerView" OnScanResult="ZXingScannerView_OnScanResult" ></zxing:ZXingScannerView>
+                <zxing:ZXingDefaultOverlay x:Name="scannerOverlay" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TopText = "Hold your phone up to the barcode" BottomText = "Scanning will happen automatically" AutomationId = "zxingDefaultOverlay"></zxing:ZXingDefaultOverlay>
+                <!--IsRunning="{Binding IsBusy,Mode=OneWay}" IsVisible="{Binding IsBusy,Mode=OneWay}"-->
+                <Switch IsToggled="{Binding ApiCallCompleted}" Toggled="Switch_Toggled" IsVisible="False" HeightRequest="1" WidthRequest="1" />
+                
+            </Grid>
+            <Button Text="Scan Barcode from image" Clicked="Button_Clicked"  VerticalOptions="End" HorizontalOptions="Center" ></Button>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
